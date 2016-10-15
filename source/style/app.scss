@@ -1,0 +1,76 @@
+//vars
+$fgreen: #00bfa5;
+$sgreen: #009688;
+$grey: #455a64;
+$black: #373e42;
+$blue: #016672;
+$l-grey: #9ea9aa;
+$aleft: #efeee9;
+$aright: #eeebdf;
+$title: #6d7070;
+$work: #faf8f0;
+
+
+
+//misc
+@import "misc/fonts";
+@import "misc/mixins";
+@import "misc/normalize";
+@import "misc/adjustment";
+@import "misc/sprite";
+@import "misc/ltitle-lines";
+
+
+//layout
+
+//common-sections
+//header
+@import "pages/common/sections/header/gamburger";
+@import "pages/common/sections/header/main";
+@import "pages/common/sections/header/socials";
+@import "pages/common/sections/header/user";
+@import "pages/common/sections/header/bottom";
+@import "pages/common/sections/header/triangles";
+@import "pages/common/sections/header/navigation";
+
+//footer
+@import "pages/common/sections/footer/main";
+@import "pages/common/sections/footer/top";
+@import "pages/common/sections/footer/bottom";
+
+//index
+@import "pages/index/sections/main";
+@import "pages/index/sections/header";
+@import "pages/index/sections/welcome-body";
+@import "pages/index/sections/welcome-foot";
+@import "pages/index/sections/auth-body";
+@import "pages/index/sections/auth-foot";
+@import "pages/index/sections/footer";
+
+//about
+//sections
+@import "pages/about/sections/about-main";
+@import "pages/about/sections/about-left";
+@import "pages/about/sections/about-right";
+@import "pages/about/sections/about-map";
+@import "pages/about/sections/about-contacts";
+
+//works
+//sections
+@import "pages/works/sections/works";
+//@import "pages/works/sections/slider";
+@import "pages/works/sections/what-about";
+@import "pages/works/sections/contact-me";
+
+//blog
+//sections
+@import "pages/blog/sections/main";
+@import "pages/blog/sections/blog-left";
+@import "pages/blog/sections/blog-right";
+
+@import "slider";
+
+
+
+
+

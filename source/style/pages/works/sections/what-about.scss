@@ -1,0 +1,127 @@
+.what-about {
+  min-height: 1288px;
+  background: url(../img/water.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 30px 0 0 0;
+
+}
+
+.what-about .container {
+  position: relative;
+}
+
+.what-about__title-shadow {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.what-about__title-shadow
+.icon-about_header {
+  width: 500px;
+  height: 170px;
+  fill: $title;
+  fill-opacity: .07;
+}
+
+.works-head__title {
+  width: 300px;
+  text-align: center;
+  line-height: 1;
+  margin-top: -55px;
+}
+
+.works-head__title.title-lines {
+  &:after,&:before {
+    //top: 32%;
+  }
+}
+
+.coments {
+  display: flex;
+  justify-content: center;
+}
+
+.coments__list {
+  display: flex;
+}
+
+.coments__item {
+  width: 380px;
+  margin-right: 20px;
+  padding: 55px 0 0 0;
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.coments-top__text {
+  color: $grey;
+  @include font(16px, regular);
+  line-height: 1.62;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    width: 33px;
+    height: 29px;
+    background: url(../img/quotes.png) no-repeat;
+    position: absolute;
+    top: -62px;
+    left: 0;
+  }
+}
+
+.coments-bottom__avatar {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.coments-bottom__avatar-img {
+  width: 100%;
+}
+
+.coments-bottom__author {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.coments-bottom__author-name,.coments-bottom__author-disc {
+  color: $fgreen;
+  display: block;
+}
+
+.coments-bottom__author-name {
+  @include font(16px, bold);
+}
+
+.coments-bottom__author-disc {
+  @include font(16px, regular);
+}
+
+.what-about__btn-arrow-up {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -13px;
+
+}
+.what-about__btn-arrow-up
+.icon-portf_arrow_down {
+  width: 26px;
+  height: 16px;
+  fill: #fff;
+  fill-opacity: .7;
+  transform: rotate(180deg);
+  cursor: pointer;
+  transition: fill-opacity .3s;
+  &:hover {
+    fill-opacity: 1;
+  }
+}

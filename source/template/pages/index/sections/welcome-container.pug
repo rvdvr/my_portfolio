@@ -1,0 +1,25 @@
+section.welcome-container
+  .welcome-container-body
+    .welcome-container-body__avatar
+      img(src='/assets/img/avatar.png').avatar__img
+    h1.welcome-container-body__title Раданцев Андрей
+    h2.welcome-container-body__disc Личный сайт разработчика
+    ul.welcome-container-body__socials
+      li.welcome-container-body__icon
+        a(href='https://vk.com/ra_dar' target='_blank').welcome-container-body__link
+          +icon('vk')
+      li.welcome-container-body__icon
+        a(href='https://github.com/rvdvr' target='_blank').welcome-container-body__link
+          +icon('github')
+      li.welcome-container-body__icon
+        a(href='https://www.linkedin.com/' target='_blank').welcome-container-body__link
+          +icon('in')
+  .welcome-container-foot
+    nav.welcome-container-foot__nav
+      ul.welcome-container-foot__list
+        li.welcome-container-foot__item.item__work
+          a(href='works.html').welcome-container-foot__link Мои работы
+        li.welcome-container-foot__item.item__about
+          a(href='about.html').welcome-container-foot__link Обо мне
+        li.welcome-container-foot__item.item__blog
+          a(href='blog.html').welcome-container-foot__link Блог

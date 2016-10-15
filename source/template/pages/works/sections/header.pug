@@ -1,0 +1,39 @@
+header.header
+  .header-top
+    .header-top__socials
+      ul.socials__list
+        li.socials__item
+          a(href='https://vk.com/ra_dar' target='_blank').socials__link
+            +icon('vk')
+        li.socials__item
+          a(href='https://github.com/rvdvr' target='_blank').socials__link
+            +icon('github')
+        li.socials__item
+          a(href='https://www.linkedin.com/' target='_blank').socials__link
+            +icon('in')
+  nav.header-nav
+    ul.header-nav__list
+      li.header-nav__item
+        a(href='works.html').header-nav__link Мои работы
+      li.header-nav__item
+        a(href='blog.html').header-nav__link Блог
+      li.header-nav__item
+        a(href='about.html').header-nav__link Обо мне
+      li.header-nav__item
+        a(href='index.html').header-nav__link Авторизация
+    #hamburger.hamburglar.is-closed
+      .burger-icon
+        .burger-container
+          .burger-bun-top
+          .burger-filling
+          .burger-bun-bot
+  .header-name
+    +icon('portfolio_header')
+  .header-user
+    .user__avatar
+      img(src='assets/img/avatar.png').user__avatar-img
+    h1.user__title Раданцев Андрей
+    h2.user__disc Личный сайт разработчика
+  .header__bottom
+    .btn__down
+      +icon('portf_arrow_down')

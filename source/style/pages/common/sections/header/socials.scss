@@ -1,0 +1,42 @@
+.socials__list {
+  display: flex;
+  align-items: center;
+}
+
+.socials__item {
+  margin-right: 25px;
+
+}
+
+.socials__link {
+  &:hover {
+    .icon {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.socials__item .icon {
+  fill: #fff;
+  fill-opacity: .5;
+  transition: fill-opacity .3s;
+
+  //&:hover {
+  //  fill-opacity: 1;
+  //}
+}
+
+.socials__item .icon-vk{
+  height: 17px;
+  width: 30px;
+}
+
+.socials__item .icon-github{
+  height: 22px;
+  width: 26px;
+}
+
+.socials__item .icon-in{
+  height: 22px;
+  width: 24px;
+}

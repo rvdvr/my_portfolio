@@ -1,0 +1,13 @@
+.about {
+  background: linear-gradient(to right, $aleft, $aright);
+  position: relative;
+}
+
+.about .container {
+  margin: 0 0;
+}
+
+.about-wrap {
+  width: 100%;
+  display: flex;
+}

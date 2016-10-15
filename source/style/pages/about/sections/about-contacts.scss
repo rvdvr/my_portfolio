@@ -1,0 +1,43 @@
+.contacts {
+  width: 380px;
+  background: rgba(#fff, .85);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -190px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  padding: 30px 40px;
+  border-radius: 5px;
+}
+
+.contacts__title {
+  color: $black;
+  @include font(35px, reg);
+  display: inline-block;
+  position: relative;
+
+}
+
+.contacts__list {
+  width: 100%;
+}
+
+.contacts__item {
+  color: $grey;
+  @include font(16px, medium);
+  vertical-align: middle;
+  display: flex;
+  align-content: center;
+  margin:0 0 15px 0;
+
+}
+
+.contacts__item .icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px 0 0;
+  fill: $fgreen;
+}

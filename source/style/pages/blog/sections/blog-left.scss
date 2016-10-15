@@ -1,0 +1,42 @@
+.blog-left {
+  flex: 1 25%;
+}
+
+.blog-left__list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+}
+
+.blog-left__item {
+  width: 100%;
+  text-align: right;
+  margin: 0 0 15px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blog-left__link {
+  color: $grey;
+  @include font(16px, regular);
+  width: 100%;
+  padding: 15px 20px 15px 0;
+  border-right: 3px solid transparent;
+  text-decoration: none;
+
+  &:hover {
+    color: $fgreen;
+    @include font(16px, regular);
+    border-right: 3px solid $fgreen;
+  }
+}
+
+.blog-left__link_active {
+  color: $fgreen;
+  @include font(16px, bold);
+  border-right: 3px solid $fgreen;
+
+  &:hover {
+    @include font(16px, bold);
+  }
+}

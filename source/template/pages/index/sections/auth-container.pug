@@ -1,0 +1,29 @@
+section.auth-container
+  form.auth-container__form
+    .auth-container-body
+      h3.auth-container-body__title Авторизуйтесь
+      .auth-container-body__login
+        .auth-container-body__login-icon
+          +icon('login',['auth-container-body__icon'])
+        input(type='text' placeholder='Логин').auth-container-body__login-input
+      .auth-container-body__pass
+        .auth-container-body__pass-icon
+          +icon('password',['auth-container-body__icon'])
+        input(type='password' placeholder='Пароль').auth-container-body__pass-input
+      .auth-container-body__checkbox
+        input(type='checkbox')#check.auth-container-body__checkbox-input
+        label(for='check').auth-container-body__label-check Я человек
+      .auth-container-body__valid Вы точно не робот?
+      ul.auth-container-body__radio-list
+        li.auth-container-body__radio-item
+          input(type='radio' name='login-radio')#radio-yes.auth-container-body__radio-input
+          label(for='radio-yes').auth-container-body__label-radio Да
+        li.auth-container-body__radio-item
+          input(type='radio' name='login-radio')#radio-no.auth-container-body__radio-input
+          label(for='radio-no').auth-container-body__label-radio Не уверен
+    .auth-container-foot
+      ul.auth-container-foot__list
+        li.auth-container-foot__item
+          a(href='#404').auth-container-foot__link На главную
+        li.auth-container-foot__item
+          input(type='submit').auth-container-foot__submit

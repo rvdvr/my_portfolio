@@ -1,0 +1,68 @@
+.about-left {
+  flex: 1 50%;
+  background: $aleft;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.about-left__title-shadow {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: -40px 0 35px 0;
+
+}
+
+.about-left__title {
+  color: $black;
+  @include font(63px, reg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -35px -96px;
+}
+
+.about-left__title-shadow
+.icon-about_header {
+  fill: $title;
+  fill-opacity: .07;
+  height: 125px;
+  width: 360px;
+}
+
+.about-left__avatar {
+  width: 445px;
+  height: 390px;
+  overflow: hidden;
+  margin: 0 0 35px 0;
+}
+
+.about-left__avatar-img {
+  width: 100%;
+}
+
+.about-left__flex-subtitle {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.about-left__subtitle {
+  color: $black;
+  @include font(35px, reg);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.about-left__disc {
+  color: $grey;
+  @include font(16px, regular);
+  line-height: 1.62;
+  width: 445px;
+  padding: 0 0 20px 0;
+}
+

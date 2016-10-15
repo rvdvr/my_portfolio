@@ -1,0 +1,52 @@
+.header-nav__list {
+  position: absolute;
+  left: -9999px;
+}
+
+
+.active .header-nav__list {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  margin-left: -160px;
+  text-align: center;
+  z-index: 2000;
+}
+
+.active .header-nav__item {
+  margin: 0 0 50px 0;
+}
+
+
+.active .header-nav__link {
+  color: #fff;
+  @include font(63px, reg);
+  text-decoration: none;
+  position: relative;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.header-nav__link {
+
+  &:after,&:before {
+    content: '';
+    background: rgba(#fff, .2);
+    position: absolute;
+    top: 40px;
+    width: 22px;
+    height: 5px;
+  }
+
+  &:after {
+    right: 100%;
+    margin-right: 20px;
+  }
+
+  &:before {
+    right: -42px;
+  }
+}

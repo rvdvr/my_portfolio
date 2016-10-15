@@ -1,0 +1,16 @@
+include ../mixins/icons
+
+doctype html
+head
+  include ../meta/common/head
+
+body
+  wrapper.wrapper
+    include about/sections/header
+    include about/sections/about
+    include about/sections/map-contacts
+    include ../common/footer
+
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' defer)
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-0Uej90XkQth_pC9hhWtKQT0rkQfJeRk&callback=initMap" async defer)
+  script(src='/assets/js/app.js' defer)

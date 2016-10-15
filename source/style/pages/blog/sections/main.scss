@@ -1,0 +1,27 @@
+.blog {
+  padding-bottom: 151px;
+}
+
+.blog .container {
+  display: flex;
+  padding: 20px 0 0 0;
+}
+
+.header-name_custom {
+  margin-top: 0;
+  margin-left: -150px;
+}
+
+.header-name_custom .icon-blog_header {
+  height: 200px;
+  width: 300px;
+  fill: #fff;
+  fill-opacity: .07;
+}
+
+.user__title__text {
+  display: inline;
+  @include font(63px, reg);
+  position: relative;
+
+}

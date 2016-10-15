@@ -1,0 +1,46 @@
+.blog-right {
+  flex: 1 75%;
+  margin: 0 80px;
+  padding: 0 0 0 20px;
+}
+
+.article {
+  padding: 0 0 60px 0;
+  margin: 0 0 60px 0;
+  position: relative;
+  
+  &:before {
+    content: '';
+    height: 5px;
+    background: rgba($black, .07);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:last-child {
+    margin: 0;
+    padding: 0;
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.article__title {
+  color: $grey;
+  @include font(36px, reg);
+  margin: 0 0 20px 0;
+}
+
+.article__date {
+  color: $fgreen;
+  @include font(16px, regular);
+}
+
+.article__text {
+  color: $grey;
+  @include font(16px, regular);
+  line-height: 1.82;
+}

@@ -1,0 +1,22 @@
+doctype html
+
+head
+  include ../meta/common/head
+body
+  wrapper.wrapper
+    .container-slider
+      .slider
+        .slider-wrap
+          ul.slider__list
+            li.slider__item.slider__active
+              .slider__img.slider__img_1
+            li.slider__item
+              .slider__img.slider__img_2
+            li.slider__item
+              .slider__img.slider__img_3
+        .slider__controls
+          a(href='#').slider__controls-button.slider__control-button_next >
+          a(href='#').slider__controls-button.slider__control-button_prev <
+
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' defer)
+script(src='/assets/js/app.js' defer)

@@ -1,0 +1,32 @@
+.container-flex {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-content: space-between;
+  flex-flow: wrap;
+  background-image: url(../img/bg-mount.png);
+  background-repeat: no-repeat center;
+  background-size: 100% 100%;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  perspective: 1000;
+}
+
+.flipper {
+  transition: .6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-animate {
+  transform: rotateY(180deg);
+}
+
+
+.disable {
+  display: none;
+}

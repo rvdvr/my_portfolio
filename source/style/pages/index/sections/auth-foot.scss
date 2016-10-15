@@ -1,0 +1,47 @@
+.auth-container-foot__list {
+  display: flex;
+}
+.auth-container-foot__item {
+  flex: 1;
+  @include font(16px, medium);
+  color: #fff;
+  background-color: $fgreen;
+  border-right: 2px solid rgba(222,227,231, .5);
+  opacity: .85;
+  text-align: center;
+  transition: background-color .3s;
+  cursor: pointer;;
+
+  &:last-child {
+    border: none;
+    border-radius: 0 0 5px 0;
+  }
+
+  &:first-child {
+    border-radius: 0 0 0 5px;
+  }
+
+  &:hover {
+    background-color: rgba($sgreen, 1);
+  }
+}
+
+.auth-container-foot__link {
+  text-decoration: none;
+  color: #fff;
+  border-radius: 0 0 0 5px;
+  width: 100%;
+  display: inline-block;
+  padding: 12px 0;
+}
+
+.auth-container-foot__submit {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0 0 5px 0;
+  display: inline-block;
+  padding: 12px 0;
+  width: 100%;
+}

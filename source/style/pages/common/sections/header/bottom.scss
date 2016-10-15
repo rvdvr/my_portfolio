@@ -1,0 +1,19 @@
+.header__bottom {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  margin-left: -13px;
+}
+
+.header .icon-portf_arrow_down {
+  height: 17px;
+  width: 27px;
+  fill: #fff;
+  fill-opacity: .7;
+  transition: fill-opacity .3s;
+  cursor: pointer;
+
+  &:hover {
+    fill-opacity: 1;
+  }
+}

@@ -1,0 +1,29 @@
+.welcome-header {
+  width: 100%;
+}
+
+.welcome-header-container {
+  max-width: 1180px;
+  min-height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.header__btn-auth {
+  color: #fff;
+  @include font(16px, medium);
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 10px 25px;
+  transition: color .3s, background-color .3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $fgreen;
+    background-color: #fff;
+  }
+}

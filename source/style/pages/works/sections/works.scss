@@ -1,0 +1,32 @@
+.works-head {
+  background: $work;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+}
+
+.works-head__title-shadow {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-itemst: center;
+  position: relative;
+}
+
+.works-head__title-shadow .icon-works_header {
+  fill: $title;
+  fill-opacity: .07;
+  height: 160px;
+  width: 490px;
+}
+
+.works-head__title {
+  color: $black;
+  @include font(63px, reg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -33px;
+  margin-left: -145px;
+}

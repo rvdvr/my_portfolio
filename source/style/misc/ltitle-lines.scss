@@ -1,0 +1,27 @@
+.title-lines {
+  &:before, &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 5px;
+    background-color: rgba(55, 62, 66, 0.2);
+    margin-top: -3px;
+  }
+
+  &:before {
+    left: -45px;
+    right: 0;
+    top: 50%;
+    bottom: 0;
+  }
+
+  &:after {
+    left: 100%;
+    right: 0;
+    top: 50%;
+    bottom: 0;
+    margin-left: 20px;
+  }
+}
+

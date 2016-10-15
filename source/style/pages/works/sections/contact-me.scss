@@ -1,0 +1,76 @@
+.contact-me-flex {
+  min-height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-me {
+  width: 380px;
+}
+
+.contact-me-form__top {
+  //display: flex;
+  //flex-flow: column wrap;
+  text-align: center;
+  padding: 30px 0 20px 0;
+  background: rgba(#fff, .3);
+}
+
+.contact-me-form__title {
+  color: $black;
+  @include font(36px, reg);
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.contact-me-form__text {
+  width: 340px;
+  color: $grey;
+  @include font(16px, regular);
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 0 20px 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.contact-me-form__message {
+  height: 140px;
+  resize: none;
+
+}
+
+.contact-me-form__bottom {
+  display: flex;
+}
+
+.contact-me-form__bottom-btn {
+  color: #fff;
+  @include font(16px, medium);
+  background: none;
+  background-color: rgba($fgreen, .85);
+  border: none;
+  border-right: 2px solid rgba(#dee3e7, .5);
+  box-sizing: border-box;
+  flex: 1 50%;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: rgba($sgreen, .85)
+  }
+  &:first-child {
+    border-radius: 0 0 0 5px;
+  }
+  &:last-child {
+    border-radius: 0 0 5px 0;
+    border: none;
+  }
+}
