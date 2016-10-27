@@ -38,6 +38,9 @@ $work: #faf8f0;
 @import "pages/common/sections/footer/top";
 @import "pages/common/sections/footer/bottom";
 
+//preloader
+@import "pages/common/sections/preloader/preloader";
+
 //index
 @import "pages/index/sections/main";
 @import "pages/index/sections/header";
@@ -67,9 +70,3 @@ $work: #faf8f0;
 @import "pages/blog/sections/main";
 @import "pages/blog/sections/blog-left";
 @import "pages/blog/sections/blog-right";
-
-
-
-
-
-

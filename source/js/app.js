@@ -1,5 +1,63 @@
 $(document).ready(function () {
 
+  //preloader
+  $(function functionName() {
+    var imgs = [];
+
+    $.each($('*'), function () {
+      var $this = $(this);
+      var background = $this.css('background-image');
+      var img = $this.is('img');
+
+      if(background != 'none') {
+        var path = background.replace('url("','').replace('")','');
+        imgs.push(path);
+      }
+
+      if (img) {
+        var path = $this.attr('src');
+
+        if (path) {
+          imgs.push(path);
+        }
+      }
+    });
+
+    var percentsTotal = 1;
+
+    for (var i = 0; i < imgs.length; i++) {
+      var image = $('<img>', {
+        attr: {
+          src: imgs[i]
+        }
+      });
+
+      image.on({
+          load: function () {
+            setPercents(imgs.length, percentsTotal);
+            percentsTotal++;
+          },
+
+          error: function () {
+            percentsTotal++;
+          }
+      });
+
+    }
+
+    function setPercents(total, current) {
+      var percent = Math.ceil(current / total * 100);
+
+      if (percent >= 100) {
+        $('.preloader').fadeOut();
+      }
+
+      $('.preloader__percents').text(percent + '%');
+    }
+
+  });
+
+
   //Parallax effect
   $(function () {
 
@@ -86,109 +144,6 @@ $(document).ready(function () {
   }());
 
 
-  //Connect google map
-  $(function() {
-
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 55.4014019, lng: 43.8266742},
-      zoom: 15,
-      scrollwheel: false,
-      disableDefaultUI: true
-
-    });
-
-    var styles = [
-      {
-        elementType: 'geometry',
-        stylers: [{color: '#f5f5f5'}]
-      },
-      {
-        elementType: 'labels.icon',
-        stylers: [{visibility: 'off'}]
-      },
-      {
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#616161'}]
-      },
-      {
-        elementType: 'labels.text.stroke',
-        stylers: [{color: '#f5f5f5'}]
-      },
-      {
-        featureType: 'administrative.land_parcel',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#bdbdbd'}]
-      },
-      {
-        featureType: 'poi',
-        elementType: 'geometry',
-        stylers: [{color: '#eeeeee'}]
-      },
-      {
-        featureType: 'poi',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#757575'}]
-      },
-      {
-        featureType: 'poi.park',
-        elementType: 'geometry',
-        stylers: [{color: '#e5e5e5'}]
-      },
-      {
-        featureType: 'poi.park',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#9e9e9e'}]
-      },
-      {
-        featureType: 'road',
-        elementType: 'geometry',
-        stylers: [{color: '#ffffff'}]
-      },
-      {
-        featureType: 'road.arterial',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#757575'}]
-      },
-      {
-        featureType: 'road.highway',
-        elementType: 'geometry',
-        stylers: [{color: '#dadada'}]
-      },
-      {
-        featureType: 'road.highway',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#616161'}]
-      },
-      {
-        featureType: 'road.local',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#9e9e9e'}]
-      },
-      {
-        featureType: 'transit.line',
-        elementType: 'geometry',
-        stylers: [{color: '#e5e5e5'}]
-      },
-      {
-        featureType: 'transit.station',
-        elementType: 'geometry',
-        stylers: [{color: '#eeeeee'}]
-      },
-      {
-        featureType: 'water',
-        elementType: 'geometry',
-        stylers: [{color: '#96d7c8'}]
-      },
-      {
-        featureType: 'water',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#9e9e9e'}]
-      }
-    ];
-
-    map.setOptions({styles: styles});
-  }());
-
   //Fixed scroll in section "Blog"
   $(function () {
     $(window).on('scroll', function () {
@@ -207,50 +162,50 @@ $(document).ready(function () {
 
 
   //Scroll "About"
-  $(function () {
-
-    $('.blog-left__link').on('click', function (e) {
-      e.preventDefault();
-
-      showArticle($(this).attr('href'),true);
-    });
-
-    showArticle(window.location.hash, false);
-
-    $(window).on('scroll', function() {
-      checkArticle();
-    });
-
-    function showArticle(article, isAnimate) {
-      var
-          direction = article.replace(/#/, ''),
-          reqArticle = $('.article').filter('[data-article="' + direction + '"]'),
-          reqArticlePos = reqArticle.offset().top;
-
-      if (isAnimate) {
-        $('body,html').animate({scrollTop: reqArticlePos}, 500);
-      } else {
-        $('body,html').scrollTop(reqArticlePos);
-      }
-    }
-
-    function checkArticle() {
-      $('.article').each(function () {
-        var $this = $(this),
-            topEdge = $this.offset().top - 200,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-
-        if (topEdge < wScroll && bottomEdge > wScroll) {
-          var
-              currentId = $this.data('article'),
-              reqLink = $('.blog-left__link').filter('[href="#' + currentId + '"]');
-              reqLink.closest('.blog-left__item').addClass('blog-left__link_active')
-                .siblings().removeClass('blog-left__link_active');
-
-          window.location.hash = currentId;
-        }
-      })
-    }
-  }());
+  // // $(function () {
+  // //
+  // //   $('.blog-left__link').on('click', function (e) {
+  // //     e.preventDefault();
+  // //
+  // //     // showArticle($(this).attr('href'),true);
+  // //   });
+  // //
+  // //   showArticle(window.location.hash, false);
+  // //
+  // //   $(window).on('scroll', function() {
+  // //     checkArticle();
+  // //   });
+  //
+  //   // function showArticle(article, isAnimate) {
+  //   //   var
+  //   //       direction = article.replace(/#/, ''),
+  //   //       reqArticle = $('.article').filter('[data-article="' + direction + '"]'),
+  //   //       reqArticlePos = reqArticle.offset().top;
+  //   //
+  //   //   if (isAnimate) {
+  //   //     $('body,html').animate({scrollTop: reqArticlePos}, 500);
+  //   //   } else {
+  //   //     $('body,html').scrollTop(reqArticlePos);
+  //   //   }
+  //   // }
+  //
+  //   function checkArticle() {
+  //     $('.article').each(function () {
+  //       var $this = $(this),
+  //           topEdge = $this.offset().top - 200,
+  //           bottomEdge = topEdge + $this.height(),
+  //           wScroll = $(window).scrollTop();
+  //
+  //       if (topEdge < wScroll && bottomEdge > wScroll) {
+  //         var
+  //             currentId = $this.data('article'),
+  //             reqLink = $('.blog-left__link').filter('[href="#' + currentId + '"]');
+  //             reqLink.closest('.blog-left__item').addClass('blog-left__link_active')
+  //               .siblings().removeClass('blog-left__link_active');
+  //
+  //         window.location.hash = currentId;
+  //       }
+  //     })
+  //   }
+  // }());
 });
