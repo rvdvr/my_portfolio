@@ -28,12 +28,12 @@
 .icon-about_header {
   fill: $title;
   fill-opacity: .07;
-  height: 125px;
-  width: 360px;
+  max-height: 125px;
+  max-width: 360px;
 }
 
 .about-left__avatar {
-  width: 445px;
+  width: 80%;
   height: 390px;
   overflow: hidden;
   margin: 0 0 35px 0;
@@ -62,7 +62,7 @@
   color: $grey;
   @include font(16px, regular);
   line-height: 1.62;
-  width: 445px;
+  max-width: 445px;
   padding: 0 0 20px 0;
 }
 

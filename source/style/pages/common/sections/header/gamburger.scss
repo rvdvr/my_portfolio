@@ -11,8 +11,6 @@ $scale: 1;
   right: 0;
   transform: scale($scale);
   margin: 0;
-  //margin: 40px auto;
-
   display: block;
   width: 68px;
   height: 68px;
@@ -21,25 +19,6 @@ $scale: 1;
   cursor: pointer;
 }
 
-// transition mask
-//.path-burger {
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//  height: 68px;
-//  width: 68px;
-//  // two masks because... browser support.
-//  mask: url(#mask);
-//  -webkit-mask-box-image: url(https://raygun.io/upload/mask.svg);
-//}
-
-//.animate-path {
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//  width: 68px;
-//  height: 68px;
-//}
 
 // what this does is create a small square that I then rotate behind an svg mask, giving the apparence of the line animating
 .path-rotation {

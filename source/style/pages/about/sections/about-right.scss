@@ -6,7 +6,6 @@
   align-content: flex-start;
   flex-flow: wrap;
   padding: 0 10px 0 40px;
-  margin-right: -30px;
 
 }
 
@@ -19,7 +18,7 @@
 .about-right__subtitle {
   color: $black;
   @include font(35px, reg);
-  width: 220px;
+  max-width: 220px;
   text-align: center;
   position: relative;
   display: inline-block;
@@ -33,7 +32,7 @@
   color: $grey;
   @include font(16px, regular);
   line-height: 1.62;
-  width: 535px;
+  max-width: 535px;
   margin: 0 0 40px 0;
 }
 

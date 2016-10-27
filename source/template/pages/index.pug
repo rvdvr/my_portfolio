@@ -4,15 +4,36 @@ doctype html
 head
   include ../meta/common/head
 body
-  wrapper.wrapper
-    main.container-flex
-      include index/sections/header
-      main.main-section
-        section.flipper
-          include index/sections/welcome-container
-          include index/sections/auth-container
-      include index/sections/footer
+  .parallax
+    .parallax__layer.parallax__layer_10
+      img(src="assets/img/Parallax/Layer-10.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-9.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-8.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-7.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-6.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-5.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-4.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-3.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-2.png")
+    .parallax__layer
+      img(src="assets/img/Parallax/Layer-1.png")
+  main.container-flex
+    include index/sections/header
+    main.main-section
+      section.flipper
+        include index/sections/welcome-container
+        include index/sections/auth-container
+    include index/sections/footer
 
   //script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' defer)
-  script(src='/assets/js/app.js' defer)
-  script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+  //script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+  script(src='bower_components/jquery/dist/jquery.js' defer)
+  script(src='assets/js/app.js' defer)

@@ -1,10 +1,19 @@
 .what-about {
   min-height: 1288px;
-  background: url(../img/water.png) no-repeat;
+  background: url(../img/water.png) no-repeat center;
   background-size: 100% 100%;
   padding: 30px 0 0 0;
-
+  position: relative;
+  overflow: hidden;
 }
+
+//.what-about__bg {
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  right: 0;
+//  bottom: 0;
+//}
 
 .what-about .container {
   position: relative;

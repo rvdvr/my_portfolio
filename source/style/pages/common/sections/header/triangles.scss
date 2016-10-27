@@ -1,3 +1,13 @@
-.header .triangle {
+.header__triangles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: -6px;
 
 }
+
+.header__triangles-svg {
+  fill: $work;
+}
+

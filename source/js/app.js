@@ -1,212 +1,256 @@
-// $(document).ready(function(){
-//
-//   var btn = $('.header__btn-auth'),
-//       flip =  $('.flipper');
-//
-//   $(function(){
-//     btn.on('click', function(){
-//
-//       flip.toggleClass('flip-animate');
-//       btn.addClass('disable');
-//     });
-//   }());
-//
-//   $(function(){
-//     $('.auth-container-foot__link').on('click', function(e){
-//       e.preventDefault();
-//
-//       btn.removeClass('disable');
-//       flip.toggleClass('flip-animate');
-//     });
-//   }());
-//
-//   $(function() {
-//
-//     var html = $('html');
-//         nav = $('.header-nav'),
-//         trigger = $('#hamburger'),
-//         isClosed = false;
-//
-//     trigger.click(function() {
-//
-//       html.toggleClass('hidden');
-//       nav.toggleClass('active');
-//       burgerTime();
-//
-//     });
-//
-//     function burgerTime() {
-//       if (isClosed == true) {
-//         trigger.removeClass('is-open');
-//         trigger.addClass('is-closed');
-//         isClosed = false;
-//       } else {
-//         trigger.removeClass('is-closed');
-//         trigger.addClass('is-open');
-//         isClosed = true;
-//       }
-//     }
-//   }());
-//
-//   // $(function(){
-//   //   var
-//   //       imgs = [];
-//   //   $.each($('*'), function () {
-//   //     var
-//   //         $this = $('this'),
-//   //         background = $this.css('background-image'),
-//   //         img = $this.is('img');
-//   //
-//   //     if (background != 'none') {
-//   //       var path = background.replace('url("','').replace('")','');
-//   //       imgs.push(path);
-//   //     }
-//   //
-//   //     if (img) {
-//   //       var path = $this.attr('src');
-//   //
-//   //       if (path) {
-//   //         imgs.push(path);
-//   //       }
-//   //     }
-//   //   });
-//   // }());
-//
-//   if ($('.slider').length) {
-//     slider.init();
-//   }
-// });
-
-// var slider = (function () {
-//
-//   //private vars
-//
-//   return {
-//     init: function () {
-//       var that = this;
-//
-//       $('.slider__btn-arrow').on('click', function () {
-//
-//         var
-//             $this = $(this),
-//             slides = $this.closest('.slider').find('.slider__item'),
-//             activeSlide = slides.filter('.slider-active'),
-//             nextSlide = activeSlide.next(),
-//             prevSlide = activeSlide.prev(),
-//             firstSlide = slides.first(),
-//             lastSlide = slides.last();
-//
-//         if ($('.slider__btn-arrow_right')) {
-//           that.moveSlide(nextSlide, 'forward');
-//         }
-//
-//       });
-//     },
-//
-//     moveSlide: function (slide, direction) {
-//
-//       var
-//           container = slide.closest('.slider'),
-//           slides = container.find('slider__item'),
-//           activeSlide = slides.filter('slider-active'),
-//           slideWidth = slides.width(),
-//           duration = 500,
-//           reqCssPosition = 0,
-//           reqSlideStrafe = 0;
-//
-//       if (direction === 'forward') {
-//         reqCssPosition = slideWidth;
-//         reqSlideStrafe = -slideWidth;
-//       } else if (direction === 'backward') {
-//         reqCssPosition = -slideWidth;
-//         reqSlideStrafe = slideWidth;
-//       }
-//
-//       slide.css('left',reqCssPosition).addClass('inslide');
-//
-//       var movableSlide = slides.filter('.inslide');
-//
-//       activeSlide.animate({left: reqSlideStrafe}, duration);
-//       movableSlide.animate({left: 0}, duration, function () {
-//         var $this = $(this);
-//
-//         slides.css('left', '0').removeClass('slider-active');
-//         $this.toggleClass('inslide slider-active');
-//
-//       });
-//
-//
-//     }
-//   }
-
-// }());
-
 $(document).ready(function () {
-  if ($('.slider').length) {
-    slider.init();
-  }
-});
 
+  //Parallax effect
+  $(function () {
 
-var slider = (function () {
+    var layer = $('.parallax').find('.parallax__layer');
+    layer.map(function (key, value) {
+      var bottomPosition = ((window.innerHeight/2) * ((key+1)/100));
 
-  //private vars
-
-  return {
-    init: function () {
-      var that = this;
-
-      $('.slider__controls-button').on('click', function (e) {
-          e.preventDefault();
-        
-          console.log('ok');
-        var
-            $this = $(this),
-            slides = $this.closest('.slider').find('.slider__item'),
-            activeSlide = slides.filter('.slider-active'),
-            nextSlide = activeSlide.next(),
-            prevSlide = activeSlide.prev(),
-            firstSlide = slides.first(),
-            lastSlide = slides.last();
-
-        if ($('.slider__control-button_next')) {
-          that.moveSlide(nextSlide, 'forward');
-        }
-
+      $(value).css({
+        'bottom': '-' + bottomPosition + 'px',
+        'transform':'translate3d(0px, 0px, 0px)'
       });
-    },
+    });
 
-    moveSlide: function (slide, direction) {
+    $(window).on('mousemove', function (e) {
 
-      var
-          container = slide.closest('.slider'),
-          slides = container.find('.slider__item'),
-          activeSlide = slides.filter('.slider-active'),
-          slideWidth = slides.width(),
-          duration = 500,
-          reqCssPosition = 0,
-          reqSlideStrafe = 0;
+      var mouse_dx = e.pageX;
+      var mouse_dy = e.pageY;
+      var w = (window.innerWidth/2) - mouse_dx;
+      var h = (window.innerHeight/2) - mouse_dy;
 
-      if (direction === 'forward') {
-        reqCssPosition = slideWidth;
-        reqSlideStrafe = -slideWidth;
-      } else if (direction === 'backward') {
-        reqCssPosition = -slideWidth;
-        reqSlideStrafe = slideWidth;
+      layer.map(function (key, value) {
+        var bottomPosition = ((window.innerHeight/2) * ((key+1)/100));
+        var widthPosition = w * ((key+1)/100);
+        var heightPosition = h * ((key+1)/100);
+
+        $(value).css({
+          'bottom': '-' + bottomPosition + 'px',
+          'transform':'translate3d(' + widthPosition + 'px, ' + heightPosition + 'px, 0px)'
+        });
+      })
+    });
+  }());
+
+
+  //Toggle block welcome
+  var btn = $('.header__btn-auth'),
+      flip =  $('.flipper');
+
+  $(function(){
+    btn.on('click', function(){
+
+      flip.toggleClass('flip-animate');
+      btn.addClass('disable');
+    });
+  }());
+
+  $(function(){
+    $('.auth-container-foot__link').on('click', function(e){
+      e.preventDefault();
+
+      btn.removeClass('disable');
+      flip.toggleClass('flip-animate');
+    });
+  }());
+
+
+  //Navigation burger
+  $(function() {
+
+    var html = $('html');
+    nav = $('.header-nav'),
+        trigger = $('#hamburger'),
+        isClosed = false;
+
+    trigger.click(function() {
+
+      html.toggleClass('hidden');
+      nav.toggleClass('active');
+      burgerTime();
+
+    });
+
+    function burgerTime() {
+      if (isClosed == true) {
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
       }
-
-      slide.css('left', reqCssPosition).addClass('inslide');
-
-      var movableSlide = slides.filter('.inslide');
-
-      activeSlide.animate({left: reqSlideStrafe}, duration);
-      movableSlide.animate({left: 0}, duration, function () {
-        var $this = $(this);
-
-        slides.css('left', '0').removeClass('slider-active');
-        $this.toggleClass('inslide slider-active');
-
-      });
     }
-  }
-}());
+  }());
+
+
+  //Connect google map
+  $(function() {
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 55.4014019, lng: 43.8266742},
+      zoom: 15,
+      scrollwheel: false,
+      disableDefaultUI: true
+
+    });
+
+    var styles = [
+      {
+        elementType: 'geometry',
+        stylers: [{color: '#f5f5f5'}]
+      },
+      {
+        elementType: 'labels.icon',
+        stylers: [{visibility: 'off'}]
+      },
+      {
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#616161'}]
+      },
+      {
+        elementType: 'labels.text.stroke',
+        stylers: [{color: '#f5f5f5'}]
+      },
+      {
+        featureType: 'administrative.land_parcel',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#bdbdbd'}]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'geometry',
+        stylers: [{color: '#eeeeee'}]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#757575'}]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'geometry',
+        stylers: [{color: '#e5e5e5'}]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#9e9e9e'}]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{color: '#ffffff'}]
+      },
+      {
+        featureType: 'road.arterial',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#757575'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{color: '#dadada'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#616161'}]
+      },
+      {
+        featureType: 'road.local',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#9e9e9e'}]
+      },
+      {
+        featureType: 'transit.line',
+        elementType: 'geometry',
+        stylers: [{color: '#e5e5e5'}]
+      },
+      {
+        featureType: 'transit.station',
+        elementType: 'geometry',
+        stylers: [{color: '#eeeeee'}]
+      },
+      {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{color: '#96d7c8'}]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#9e9e9e'}]
+      }
+    ];
+
+    map.setOptions({styles: styles});
+  }());
+
+  //Fixed scroll in section "Blog"
+  $(function () {
+    $(window).on('scroll', function () {
+      var
+          top = $(document).scrollTop(),
+          hHeader = $('.header').height(),
+          nav = $('.blog-left__nav');
+
+      if(top - 90 > hHeader) {
+        nav.addClass('fixed')
+      } else {
+        nav.removeClass('fixed')
+      }
+    });
+  }());
+
+
+  //Scroll "About"
+  $(function () {
+
+    $('.blog-left__link').on('click', function (e) {
+      e.preventDefault();
+
+      showArticle($(this).attr('href'),true);
+    });
+
+    showArticle(window.location.hash, false);
+
+    $(window).on('scroll', function() {
+      checkArticle();
+    });
+
+    function showArticle(article, isAnimate) {
+      var
+          direction = article.replace(/#/, ''),
+          reqArticle = $('.article').filter('[data-article="' + direction + '"]'),
+          reqArticlePos = reqArticle.offset().top;
+
+      if (isAnimate) {
+        $('body,html').animate({scrollTop: reqArticlePos}, 500);
+      } else {
+        $('body,html').scrollTop(reqArticlePos);
+      }
+    }
+
+    function checkArticle() {
+      $('.article').each(function () {
+        var $this = $(this),
+            topEdge = $this.offset().top - 200,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var
+              currentId = $this.data('article'),
+              reqLink = $('.blog-left__link').filter('[href="#' + currentId + '"]');
+              reqLink.closest('.blog-left__item').addClass('blog-left__link_active')
+                .siblings().removeClass('blog-left__link_active');
+
+          window.location.hash = currentId;
+        }
+      })
+    }
+  }());
+});

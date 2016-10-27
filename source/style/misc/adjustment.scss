@@ -1,6 +1,6 @@
 // adjustment vars
 $footer-height: 80px;
-$container-width: 1180px;
+//$container-width: 1180px;
 
 // adjustment styles
 body, html {
@@ -19,7 +19,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	//min-width: $container-width + 140px;
-	min-width: 1200px;
+	//min-width: 1200px;
 }
 
 //.wrapper:after {
@@ -34,7 +34,7 @@ body {
 }
 
 .container {
-	max-width: $container-width;
+	//max-width: $container-width;
 	margin: 0 auto;
 }
 

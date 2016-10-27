@@ -57,19 +57,13 @@
   right: 0;
   left: 0;
   background: rgba($fgreen, .87);
-  z-index: 1000;
+  z-index: 9000;
 }
 
 .hidden {
   overflow: hidden;
 }
 
-
-//.header-middle {
-//  display: flex;
-//  justify-content: center;
-//  width: 100%;
-//}
 
 .header-name {
   width: 1180px;
