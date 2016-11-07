@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   //preloader
-  $(function functionName() {
+  $(function () {
     var imgs = [];
 
     $.each($('*'), function () {
