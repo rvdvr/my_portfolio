@@ -9,3 +9,4 @@ module.exports = function() {
       .pipe($.gulp.dest($.config.root + '/assets/js'))
   })
 };
+

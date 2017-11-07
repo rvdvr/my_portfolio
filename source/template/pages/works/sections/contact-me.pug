@@ -1,11 +1,11 @@
 .contact-me__wrapp
   .contact-me
-    form.contact-me-form
+    form#form.contact-me-form
       .contact-me-form__top
         h3.contact-me-form__title.title-lines Связаться со мной
-        input(type='text' placeholder='Имя').contact-me-form__text.contact-me-form__name
-        input(type='text' placeholder='Email').contact-me-form__text.contact-me-form__email
-        textarea(placeholder='Ваше сообщение').contact-me-form__text.contact-me-form__message
+        input(type='text' name='name' placeholder='Имя' required='required').contact-me-form__text.contact-me-form__name
+        input(type='text' name='email' placeholder='Email' required='required').contact-me-form__text.contact-me-form__email
+        textarea(name='message' placeholder='Ваше сообщение').contact-me-form__text.contact-me-form__message
       .contact-me-form__bottom
         button(type='submit').contact-me-form__bottom-btn Отправить
         button(type='reset').contact-me-form__bottom-btn Очистить

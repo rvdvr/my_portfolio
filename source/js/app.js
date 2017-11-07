@@ -118,7 +118,7 @@ $(document).ready(function () {
   $(function() {
 
     var html = $('html');
-    nav = $('.header-nav'),
+    var nav = $('.header-nav'),
         trigger = $('#hamburger'),
         isClosed = false;
 
@@ -141,8 +141,32 @@ $(document).ready(function () {
         isClosed = true;
       }
     }
+
+  //arrow down at header
+  $('.btn__down').click(function(e) {
+    e.preventDefault();
+    
+    var curPos = $(document).scrollTop();
+    var height = $('.header').height() + 70;
+    var scrollTime=(height-curPos)/1.73;
+    
+    $('body,html').animate({
+      'scrollTop': height
+    }, scrollTime);
+    
+  });
   }());
 
+  //arrow top at page 'about_me'
+
+  $('.what-about__btn-arrow-up').click(function(){
+    var curPos=$(document).scrollTop();
+    var scrollTime=curPos/1.73;
+
+    $('body, html').animate({
+      'scrollTop': 0
+    }, scrollTime);
+  });
 
   //Fixed scroll in section "Blog"
   $(function () {
@@ -161,51 +185,53 @@ $(document).ready(function () {
   }());
 
 
-  //Scroll "About"
-  // // $(function () {
-  // //
-  // //   $('.blog-left__link').on('click', function (e) {
-  // //     e.preventDefault();
-  // //
-  // //     // showArticle($(this).attr('href'),true);
-  // //   });
-  // //
-  // //   showArticle(window.location.hash, false);
-  // //
-  // //   $(window).on('scroll', function() {
-  // //     checkArticle();
-  // //   });
-  //
-  //   // function showArticle(article, isAnimate) {
-  //   //   var
-  //   //       direction = article.replace(/#/, ''),
-  //   //       reqArticle = $('.article').filter('[data-article="' + direction + '"]'),
-  //   //       reqArticlePos = reqArticle.offset().top;
-  //   //
-  //   //   if (isAnimate) {
-  //   //     $('body,html').animate({scrollTop: reqArticlePos}, 500);
-  //   //   } else {
-  //   //     $('body,html').scrollTop(reqArticlePos);
-  //   //   }
-  //   // }
-  //
-  //   function checkArticle() {
-  //     $('.article').each(function () {
-  //       var $this = $(this),
-  //           topEdge = $this.offset().top - 200,
-  //           bottomEdge = topEdge + $this.height(),
-  //           wScroll = $(window).scrollTop();
-  //
-  //       if (topEdge < wScroll && bottomEdge > wScroll) {
-  //         var
-  //             currentId = $this.data('article'),
-  //             reqLink = $('.blog-left__link').filter('[href="#' + currentId + '"]');
-  //             reqLink.closest('.blog-left__item').addClass('blog-left__link_active')
-  //               .siblings().removeClass('blog-left__link_active');
-  //
-  //         window.location.hash = currentId;
-  //       }
-  //     })
-  //   }
-  // }());
+  // Scroll "Blog"
+  if ($('.blog').html()) {
+    $(function () {
+      
+        $('.blog-left__link').on('click', function (e) {
+          e.preventDefault();
+      
+          showArticle($(this).attr('href'),true);
+        });
+      
+        showArticle(window.location.hash, false);
+      
+        $(window).on('scroll', function() {
+          checkArticle();
+        });
+      
+        function showArticle(article, isAnimate) {
+          var
+              direction = article.replace(/#/, ''),
+              reqArticle = $('.article').filter('[data-article="' + direction + '"]'),
+              reqArticlePos = reqArticle.offset().top;
+        
+          if (isAnimate) {
+            $('body,html').animate({scrollTop: reqArticlePos}, 500);
+          } else {
+            $('body,html').scrollTop(reqArticlePos);
+          }
+        };
+      
+        function checkArticle() {
+          $('.article').each(function () {
+            var $this = $(this),
+                topEdge = $this.offset().top - 100,
+                bottomEdge = topEdge + $this.height(),
+                wScroll = $(window).scrollTop();
+      
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+                  currentId = $this.data('article'),
+                  reqLink = $('.blog-left__link').filter('[href="#' + currentId + '"]');
+                  reqLink.closest('.blog-left__item').addClass('blog-left__link_active')
+                    .siblings().removeClass('blog-left__link_active');
+      
+              window.location.hash = currentId;
+            }
+          });
+      }; 
+    });
+  };
 });
