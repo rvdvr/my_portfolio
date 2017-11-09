@@ -1,6 +1,7 @@
 .header-nav__list {
   position: absolute;
   left: -9999px;
+  opacity: 0;
 }
 
 
@@ -11,6 +12,8 @@
   margin-left: -160px;
   text-align: center;
   z-index: 2000;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
 }
 
 .active .header-nav__item {
@@ -26,27 +29,37 @@
   transition: opacity .3s;
 
   &:hover {
-    opacity: .8;
+    &:after {
+      right: 100%;
+      margin-right: 20px;
+      opacity: .8;
+    }
+  
+    &:before {
+      right: -42px;
+      opacity: .8;
+    }
   }
 }
 
 .header-nav__link {
-
   &:after,&:before {
     content: '';
-    background: rgba(#fff, .2);
+    background: #fff;
+    opacity: .1;
     position: absolute;
     top: 40px;
     width: 22px;
     height: 5px;
+    transition: right .3s opacity .5s;
   }
 
   &:after {
-    right: 100%;
+    right: 100100%;
     margin-right: 20px;
   }
 
   &:before {
-    right: -42px;
+    right: -10042px;
   }
 }
