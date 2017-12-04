@@ -1,13 +1,14 @@
-$(document).ready(function(){
-  $('#form').on('submit', function(e) { //устанавливаем событие отправки для формы с id=form
+var sendMessage = (function($) {
+  function submitForm(e) {
     e.preventDefault()
-    var formData = $(this).serialize(); //собераем все данные из формы
+
+    var formData = $(this).serialize();
+
     $.ajax({
-      type: "POST", //Метод отправки
-      url: "php/form.php", //путь до php фаила отправителя
+      type: "POST",
+      url: "php/form.php",
       data: formData,
       success: function() {
-        //код в этом блоке выполняется при успешной отправке сообщения
         alert("Ваше сообщение отправлено!");
       },
       error: function (xhr,status,error) {
@@ -15,6 +16,17 @@ $(document).ready(function(){
         console.log(error);
       }
     });
+
     $(this).trigger('reset');
-  });
-});
+  }
+
+  function init() {
+    $('#form').on('submit', submitForm);
+  }
+
+  return {
+    init: init()
+  };
+})(jQuery);
+
+$(document).ready(sendMessage.init);

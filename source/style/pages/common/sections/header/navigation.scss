@@ -26,7 +26,6 @@
   @include font(63px, reg);
   text-decoration: none;
   position: relative;
-  transition: opacity .3s;
 
   &:hover {
     &:after {
@@ -57,9 +56,13 @@
   &:after {
     right: 100100%;
     margin-right: 20px;
+    opacity: 0;
+    transition: opacity .25s;
   }
 
   &:before {
     right: -10042px;
+    opacity: 0;
+    transition: opacity .25s;
   }
 }

@@ -30,10 +30,13 @@
 
 .about-right__disc {
   color: $grey;
-  @include font(16px, regular);
+  @include font(18px, regular);
   line-height: 1.62;
-  max-width: 535px;
   margin: 0 0 40px 0;
+  & ul li {
+    margin-left: 20px;
+    list-style: circle inside;
+  }
 }
 
 .about-right__item {
@@ -134,7 +137,7 @@
 
 .skills__item_mongo {
    &:after {
-     content: 'Mongo.db';
+     content: 'Wordpress';
      margin-left: -27px;
    }
 }
@@ -155,8 +158,8 @@
 
 .skills__item_bower {
   &:after {
-    content: 'Bower';
-    margin-left: -15px;
+    content: 'Photoshop';
+    margin-left: -28px;
   }
 }
 
@@ -164,4 +167,15 @@
   fill: transparent;
   stroke: $fgreen;
   stroke-width: 20px;
+  stroke-dasharray: 284px;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+  opacity: .9;
+}
+
+.skills__diagram-circle-bg {
+  fill: transparent;
+  stroke: #dfdcd5;
+  stroke-width: 20px;
+  opacity: .7;
 }

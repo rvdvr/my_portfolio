@@ -11,7 +11,7 @@
   display: flex;
   position: relative;
   justify-content: center;
-  margin: -40px 0 35px 0;
+  margin: -40px 0 0 0;
 
 }
 
@@ -21,7 +21,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -35px -96px;
+  margin: -35px -95px;
 }
 
 .about-left__title-shadow
@@ -32,37 +32,17 @@
   max-width: 360px;
 }
 
-.about-left__avatar {
-  width: 80%;
-  height: 390px;
-  overflow: hidden;
-  margin: 0 0 35px 0;
-}
-
-.about-left__avatar-img {
-  width: 100%;
-}
-
-.about-left__flex-subtitle {
-  width: 100%;
-  text-align: center;
-  margin: 0 0 10px 0;
-}
-
-.about-left__subtitle {
-  color: $black;
-  @include font(35px, reg);
-  text-align: center;
-  position: relative;
-  display: inline-block;
-  margin: 0;
-}
-
 .about-left__disc {
   color: $grey;
-  @include font(16px, regular);
-  line-height: 1.62;
-  max-width: 445px;
-  padding: 0 0 20px 0;
+  @include font(18px, regular);
+  line-height: 1.52;
+  width: 80%;
+  padding: 0 0 50px 0;
+  & p {
+    margin-bottom: 4px;
+  }
+  & ul li {
+    margin-left: 20px;
+    list-style: circle inside;
+  }
 }
-

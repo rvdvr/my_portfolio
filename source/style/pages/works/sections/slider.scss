@@ -1,6 +1,6 @@
 .works-slider {
   background: #efebe0;
-  //min-height:750px;
+  // max-height:850px;
 }
 
 .works-slider .container {
@@ -8,7 +8,7 @@
 }
 
 .slider {
-  height: 100vh;
+  // height: 850px;
   width: 100%;
   //overflow: hidden;
   position: relative;
@@ -36,22 +36,30 @@
 
 }
 
-.slider-left, .slider-right {
-  width: 50%;
+.slider-left {
+  width: 65%;
+}
+
+.slider-right {
+  width: 35%;
 }
 
 .slider-left {
   min-height: 750px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider-left__illustration {
-  height: 650px;
-  width: 510px;
+  // height: 650px;
+  // width: 510px;
+  width: 70%;
   overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  // position: absolute;
+  // bottom: 0;
+  // right: 0;
 }
 
 .slider-left__illustration-img {
@@ -62,15 +70,19 @@
 
 .slider-right {
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .slider-right-container {
-  width: 380px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -150px;
-  margin-left: -190px;
+  width: 85%;
+  // width: 380px;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // margin-top: -150px;
+  // margin-left: -190px;
 }
 
 .slider-right-container__title {
@@ -80,8 +92,9 @@
 }
 
 .slider-right-container__technologies {
-  color: $fgreen;
-  @include font(16px, medium);
+  // color: $fgreen;
+  color: $grey;
+  @include font(16px, regular);
   border-top: 1px solid rgba($fgreen, .3);
   border-bottom: 1px solid rgba($fgreen, .3);
   margin-bottom: 40px;
@@ -127,7 +140,7 @@
 .slider__btn-arrow_left
 .icon-portf_arrow_down {
   height: 30px;
-  width: 20px;
+  width: 30px;
   fill: $fgreen;
   fill-opacity: .7;
   transform: rotate(90deg);
@@ -142,7 +155,7 @@
 .slider__btn-arrow_right
 .icon-portf_arrow_down {
   height: 30px;
-  width: 20px;
+  width: 30px;
   fill: $fgreen;
   fill-opacity: .7;
   transform: rotate(270deg);
@@ -181,7 +194,7 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 15px;
+  bottom: 40px;
   left: 50%;
   margin-left: -50px;
   z-index: 999;
