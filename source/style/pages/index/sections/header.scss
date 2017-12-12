@@ -1,15 +1,21 @@
 .welcome-header {
   width: 100%;
-}
-
-.welcome-header-container {
-  max-width: 1180px;
+  // max-width: 1180px;
   min-height: 100px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 0 auto;
 }
+
+// .welcome-header-container {
+//   max-width: 1180px;
+//   min-height: 100px;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   margin: 0 auto;
+// }
 
 .header__btn-auth {
   color: #fff;
@@ -21,6 +27,11 @@
   padding: 10px 25px;
   transition: color .3s, background-color .3s;
   cursor: pointer;
+  margin: 25px;
+
+  @include phone() {
+    margin: 0 auto;
+  }
 
   &:hover {
     color: $fgreen;

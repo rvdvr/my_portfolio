@@ -6,6 +6,10 @@
   bottom: 0;
   right: 0;
 
+  @include phone() {
+    display: none;
+  }
+
 }
 
 .parallax__layer {
@@ -40,6 +44,21 @@
   left: 0;
   right: 0;
   bottom: 0;
+
+  @include phone() {
+    background: url(../img/bg-big.png);
+    background-size: cover;
+  }
+
+  @include tablet() {
+    background: url(../img/bg-big.png);
+    background-size: cover;
+  }
+
+  @include laptop() {
+    background: url(../img/bg-big.png);
+    background-size: cover;
+  }
 }
 
 .main-section {
