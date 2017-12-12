@@ -1,4 +1,4 @@
 #Раданцев Андрей
 
 Ссылка на проект:
-  http://rvdvrdev.ru
+  http://radantsev.tmweb.ru
